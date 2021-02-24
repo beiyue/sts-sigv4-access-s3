@@ -57,16 +57,6 @@ aws sts get-caller-identity --profile s3-test-user
 #### [获取临时凭证]
 ```
 sudo vim ~/getSTS.sh
-```
-#将console Role ARN替换--role-arn值， 例如：--role-arn  arn:aws:iam::# 基于AWS STS服务使用V4签名访问S3
-
-在一些智能家居场景设备资源有限，官方SDK体积过大，这里提供了一种替代思路自行封装V4签名方式来访问S3。
-
-
-
-#### [获取临时凭证]
-```
-sudo vim ~/getSTS.sh
 
 aws sts assume-role --role-arn arn:aws-cn:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --role-session-name $1 > sts.txt
 
