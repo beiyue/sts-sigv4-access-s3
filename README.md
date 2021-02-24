@@ -10,15 +10,17 @@
 登录AWS Console后台，选择服务，在搜索框中选择“IAM”，在IAM左侧选择“用户”，创建用户名为“s3-test-user”,勾选访问类型“编程访问”
 生成AK/SK：
 
+```Bash
 Access key ID ：AKIARKSM4QPXGEUXXXXXX
 Secret access key：v645s/S1fiZy/+9KjmP3YxQ+cL70qiiXXXXXXXX
-
+```
 
 #### [创建角色]
 
 创建IAM Role，选择“其他AWS账户”，填入账户ID，这里简单设置为登录的账号即可。角色名称输入“sts-test”
 生成的 Role ARN：arn:aws:iam::XXXXX:role/sts-test
 这里需要修改Role的trust relationship policy,选择“编辑信任关系”，将root替换为s3-test-user,修改如下：
+```Bash
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -31,7 +33,7 @@ Secret access key：v645s/S1fiZy/+9KjmP3YxQ+cL70qiiXXXXXXXX
     }
   ]
 }
-
+```
 #### [测试用户权限]
 直接使用 AK/SK，查看用户是否有相应的权限，使用 aws configure 配置：
 $ aws configure --profile s3-test-user
