@@ -81,3 +81,29 @@ sudo ./test.sh PUT \Develop_Bucket\devices\jpg\test.jpeg   /home/ubuntu/test.jpe
 #执行test.sh脚本
 sudo ./test.sh 	PUT  \<BUCKET_PATH>\test.jpeg  /home/ubuntu/test.jpeg
 ```
+#log
+```
+*   Trying 52.2XX.XXX.XXX...
+* TCP_NODELAY set
+* Connected to s3.ap-southeast-1.amazonaws.com (52.2XX.XXX.XXX) port 80 (#0)
+> PUT /s3-v4-test/test.jpeg HTTP/1.1
+> Host: s3.ap-southeast-1.amazonaws.com
+> User-Agent: curl/7.58.0
+> Accept: */*
+> x-amz-date: 20210224T160654Z
+> x-amz-security-token: FwoGZXIvYXdzEBIaDP6YVYKOMoXT8XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+> Authorization: AWS4-HMAC-SHA256 Credential=ASIARKSM4QPXXXXXXXX/20210224/ap-southeast-1/s3/aws4_request, SignedHeaders=host;x-amz-date;x-amz-security-token, Signature=fc209fbc507713f406d60c82faXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+> x-amz-content-sha256: UNSIGNED-PAYLOAD
+> Content-Length: 303
+> Expect: 100-continue
+> 
+< HTTP/1.1 100 Continue
+* We are completely uploaded and fine
+< HTTP/1.1 200 OK
+< x-amz-id-2: sZkOnpcRbCVoCyGJfoYU7XfkFfXyas1YIBRToKdbXXXXXXXXXXXXXXXXXXX=
+< x-amz-request-id: 129F789865EXXXXX
+< Date: Wed, 24 Feb 2021 16:06:55 GMT
+< ETag: "25633a3d987a2da68b0b19xxxxxxxxxxx”
+< Content-Length: 0
+< Server: AmazonS3
+```
