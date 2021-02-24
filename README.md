@@ -58,10 +58,13 @@ aws sts get-caller-identity --profile s3-test-user
 ```
 sudo vim ~/getSTS.sh
 
+#ZHY
 aws sts assume-role --role-arn arn:aws-cn:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --role-session-name $1 > sts.txt
 
-#将console Role ARN拷贝替换--role-arn， 例如：--role-arn  arn:aws:iam::0914293XXXXX:role/sts-test
+#Global
+aws sts assume-role --role-arn arn:aws:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --role-session-name $1 > sts.txt
 
+#将console Role ARN 拷贝替换 --role-arn，例如：--role-arn arn:aws:iam::0914293XXXXX:role/sts-test
 aws sts assume-role --role-arn arn:aws:iam::0914293XXXXX:role/sts-test --role-session-name $1 > sts.txt
 
 #执行test.sh脚本
