@@ -68,9 +68,11 @@ sudo vim ~/getSTS.sh
 ```
 sudo vim ~/getSTS.sh
 
-#将console Role ARN替换--role-arn值， 例如：--role-arn  arn:aws:iam::0914293XXXXX:role/sts-test
-
 aws sts assume-role --role-arn arn:aws-cn:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --role-session-name $1 > sts.txt
+
+#将console Role ARN拷贝替换--role-arn， 例如：--role-arn  arn:aws:iam::0914293XXXXX:role/sts-test
+
+aws sts assume-role --role-arn arn:aws:iam::0914293XXXXX:role/sts-test --role-session-name $1 > sts.txt
 
 #执行test.sh脚本
 sudo ./test.sh 	PUT  \<BUCKET_PATH>\${RANDOM}.jpeg  /home/ubuntu/test.jpeg
@@ -84,17 +86,8 @@ sudo ./test.sh 	PUT  \<BUCKET_PATH>\${RANDOM}.jpeg  /home/ubuntu/test.jpeg
 
 Examples:
 
-#修改test.sh脚本
-method=PUT
-canonical_uri=\Develop_Bucket\devices\jpg\${RANDOM}.jpeg
-file_name= /home/ubuntu/test.jpeg
-
-#执行：
-sudo ./test.sh PUT \Develop_Bucket\devices\jpg\${RANDOM}.jpeg   /home/ubuntu/test.jpeg
-:role/sts-test
-
-aws sts assume-role --role-arn arn:aws-cn:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --role-session-name $1 > sts.txt
+sudo ./test.sh PUT \Develop_Bucket\devices\jpg\test.jpeg   /home/ubuntu/test.jpeg
 
 #执行test.sh脚本
-sudo ./test.sh 	PUT  \<BUCKET_PATH>\${RANDOM}.jpeg  /home/ubuntu/test.jpeg
+sudo ./test.sh 	PUT  \<BUCKET_PATH>\test.jpeg  /home/ubuntu/test.jpeg
 ```
