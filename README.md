@@ -65,7 +65,7 @@ aws sts assume-role --role-arn arn:aws-cn:iam::<ACCOUNT_ID >:role/<ROLE_NAME> --
 aws sts assume-role --role-arn arn:aws:iam::0914293XXXXX:role/sts-test --role-session-name $1 > sts.txt
 
 #执行test.sh脚本
-sudo ./test.sh 	PUT  \<BUCKET_PATH>\${RANDOM}.jpeg  /home/ubuntu/test.jpeg
+sudo ./getSTS.sh  ${RANDOM} 
 ```
 
 #### [Shell实现V4签名 PUT/GET 访问 S3]
